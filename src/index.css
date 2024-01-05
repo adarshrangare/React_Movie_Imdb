@@ -20,11 +20,18 @@
   --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
 }
 
+
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   background-color: var(--black);
@@ -41,6 +48,72 @@ body {
   background-color: #0a2955;
   
 }
+
+/* .cursor{
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 999999;
+  width: 1rem;
+  height: 1rem;
+  background-color: #fff;
+  border-radius: 50%;
+} */
+
+/*
+
+.gradient {
+  --size: 250px;
+  --speed: 50s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  /* background-image: linear-gradient(180deg,hsl(158, 82, 57, 85%), hsl(252, 82, 57)); */
+  /* background-color: #fff; */
+  /* position: fixed;
+  inset: 0;
+  z-index: 9;
+  background: rgb(221,136,11);
+  background: linear-gradient(279deg, rgb(11, 151, 221) 0%, rgb(251, 105, 7)100%);
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  opacity: 0.5; */
+/* } */
+
+/* @media (min-width: 720px) {
+  .gradient {
+    --size: 1000px;
+  }
+} */
+
+/* @keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+/* body { */
+  /* background-color: #000; */
+  /* position: absolute; */
+  /* inset: 0; */
+  /* display: flex;
+  place-content: center;
+  align-items: center;
+  overflow: hidden;
+} */
+/* } */
+
+/* This is just to transition when you change the viewport size. */
+/*   transition: all 0.25s ease-out;
+} */
+
+
+
 
 .skeleton::after {
   position: absolute;

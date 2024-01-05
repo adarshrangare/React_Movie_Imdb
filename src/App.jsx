@@ -24,18 +24,48 @@ const App = () => {
   // console.log(url)
 
   useEffect(() => {
-    const apiTest = () => {
-      fetchDataFromAPI("/movie/popular").then((res) => {
+    const fetchApiConfig = () => {
+      fetchDataFromAPI("/configuration").then((res) => {
         console.log(res);
-        dispatch(getApiConfig(res));
+
+        const urlCluster = {
+          backdrop: res.images.secure_base_url + "original",
+          poster: res.images.secure_base_url + "original",
+          profile: res.images.secure_base_url + "original",
+        };
+
+        dispatch(getApiConfig(urlCluster));
       });
     };
 
-    // apiTest();
+    fetchApiConfig();
+    genresCall();
   }, []);
+
+  const genresCall = async ()=>{
+    let promises = [];
+    let endpoints = ["tv","movie"];
+
+    let allGenres = {};
+
+    endpoints.forEach((endpoint)=>{
+      promises.push(fetchDataFromAPI(`/genre/${endpoint}/list`))
+    })
+
+    const data = await Promise.all(promises);
+
+    data.map(({genres})=>{
+      return genres.map((item)=>(allGenres[item.id] = item));
+    })
+    
+    // console.log("all",allGenres);
+    dispatch(getGenres(allGenres));
+
+  }
 
   return (
     <BrowserRouter>
+    <div className="gradient"></div>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
