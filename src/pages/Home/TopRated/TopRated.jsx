@@ -3,25 +3,23 @@ import { useState } from "react";
 import useFetch from "../../../hooks/useFetch";
 import { Carousel, ContentWrapper, SwitchTab } from "../../../components";
 
+
 const TopRated = () => {
-    
-  const [media_type, setTime_window] = useState("movie");
+  const [endpoint, setEndpoint] = useState("movie");
+  const now_playing = endpoint=="movie" ? "now_playing" : "airing_today"
+  const { data, loading } = useFetch(`/${endpoint}/${now_playing}`);
 
-  const { data, loading } = useFetch(`/${media_type}/top_rated`);
-  
   const onTabChange = (tab) => {
-    setTime_window(tab.toLowerCase());
+    setEndpoint(tab === "Movies" ? "movie" : "tv");
   };
-
-    
 
   return (
     <div className="carouselSection">
       <ContentWrapper>
-        <span className="carouselTitle">Top Rated</span>
-        <SwitchTab data={["Movie", "TV"]} onTabChange={onTabChange} />
+        <span className="carouselTitle">All Time Top Rated</span>
+        <SwitchTab data={["Movies", "TV Shows"]} onTabChange={onTabChange} />
       </ContentWrapper>
-      <Carousel  time_window = {media_type} data={data?.results} loading={loading}/>
+      <Carousel data={data?.results} loading={loading} endpoint={endpoint} />
     </div>
   );
 };

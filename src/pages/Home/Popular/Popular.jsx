@@ -4,24 +4,21 @@ import useFetch from "../../../hooks/useFetch";
 import { Carousel, ContentWrapper, SwitchTab } from "../../../components";
 
 const Popular = () => {
-    
-  const [media_type, setTime_window] = useState("movie");
+  const [endpoint, setEndpoint] = useState("movie");
 
-  const { data, loading } = useFetch(`/${media_type}/popular`);
-  
+  const { data, loading } = useFetch(`/${endpoint}/popular`);
+
   const onTabChange = (tab) => {
-    setTime_window(tab.toLowerCase());
+    setEndpoint(tab === "Movies" ? "movie" : "tv");
   };
-
-    
 
   return (
     <div className="carouselSection">
       <ContentWrapper>
-        <span className="carouselTitle">Popular <span style={{color:"red", textTransform:"capitalize"}} >{media_type+"s"}</span></span>
-        <SwitchTab data={["Movie", "TV"]} onTabChange={onTabChange} />
+        <span className="carouselTitle">What's Popular</span>
+        <SwitchTab data={["Movies", "TV Shows"]} onTabChange={onTabChange} />
       </ContentWrapper>
-      <Carousel  time_window = {media_type} data={data?.results} loading={loading}/>
+      <Carousel data={data?.results} loading={loading} endpoint={endpoint} />
     </div>
   );
 };
