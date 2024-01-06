@@ -42,30 +42,29 @@ const App = () => {
     genresCall();
   }, []);
 
-  const genresCall = async ()=>{
+  const genresCall = async () => {
     let promises = [];
-    let endpoints = ["tv","movie"];
+    let endpoints = ["tv", "movie"];
 
     let allGenres = {};
 
-    endpoints.forEach((endpoint)=>{
-      promises.push(fetchDataFromAPI(`/genre/${endpoint}/list`))
-    })
+    endpoints.forEach((endpoint) => {
+      promises.push(fetchDataFromAPI(`/genre/${endpoint}/list`));
+    });
 
     const data = await Promise.all(promises);
 
-    data.map(({genres})=>{
-      return genres.map((item)=>(allGenres[item.id] = item));
-    })
-    
+    data.map(({ genres }) => {
+      return genres.map((item) => (allGenres[item.id] = item));
+    });
+
     // console.log("all",allGenres);
     dispatch(getGenres(allGenres));
-
-  }
+  };
 
   return (
     <BrowserRouter>
-    <div className="gradient"></div>
+      <div className="gradient"></div>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
