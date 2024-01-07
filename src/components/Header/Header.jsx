@@ -101,7 +101,7 @@ const Header = () => {
             TV/Web Series
           </li>
           <li className="menuItem">
-            <HiOutlineSearch onClick={focusSearch} />
+            <HiOutlineSearch onClick={openSearch} />
             {mobileMenu && "Search"}
           </li>
           <li className="menuItem">
