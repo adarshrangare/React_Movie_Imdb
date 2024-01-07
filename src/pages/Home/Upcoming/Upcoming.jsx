@@ -6,7 +6,7 @@ import { Carousel, ContentWrapper, SwitchTab } from "../../../components";
 const Upcoming = () => {
   const [endpoint, setEndpoint] = useState("movie");
 
-  const { data, loading } = useFetch(`/${endpoint}/popular`);
+  const { data, loading } = useFetch(`/${endpoint}/upcoming`);
 
   const onTabChange = (tab) => {
     setEndpoint(tab === "Movies" ? "movie" : "tv");
