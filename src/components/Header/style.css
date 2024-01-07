@@ -101,6 +101,7 @@
   flex-direction: row;
   gap: .5rem;
   align-items: flex-start;
+  
 }
 .header.mobileView .menuItems .menuItem:last-child {
   display: none;
@@ -151,4 +152,8 @@
   100% {
     transform: translateY(0);
   }
+}
+
+header ul li, header .hamburger, .close, .search{
+  cursor: pointer;
 }

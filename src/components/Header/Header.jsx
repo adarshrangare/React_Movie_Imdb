@@ -5,6 +5,8 @@ import { VscChromeClose } from "react-icons/vsc";
 import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { useNavigate, useLocation } from "react-router-dom";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import "./style.css";
 
@@ -54,11 +56,7 @@ const Header = () => {
     setShowSearch(false);
   };
 
-  const focusSearch = () => {
-    const searchBar = document.getElementById("searchbar");
-    console.log(searchBar);
-    searchBar.focus();
-  };
+  
 
   const navigationHandler = (type) => {
     if (type == "home") {
@@ -74,11 +72,26 @@ const Header = () => {
   };
 
   const searchQueryHandler = (event) => {
-    if (event.key === "Enter" && query.length > 0) {
-      navigate(`/search/${query}`);
-      setTimeout(() => {
-        setShowSearch(false);
-      }, 1000);
+    if (event.key === "Enter") {      
+      if(query.trim().length > 0){
+        navigate(`/search/${query}`)
+        setTimeout(() => {
+          setShowSearch(false);
+        }, 1000);
+      } else{
+        toast.error('Please Enter a Movie or TV Show!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",});
+      }
+      
+
+     
     }
   };
 
@@ -113,19 +126,21 @@ const Header = () => {
             {mobileMenu && "Favourites"}
           </li>
           <li className="menuItem">
-            <FaUser
+          <FaUser
               onClick={() => {
                 navigationHandler("login");
               }}
             />
+            {mobileMenu && "User"}
           </li>
+         
         </ul>
         <div className="mobileMenuItems">
-          <HiOutlineSearch onClick={openSearch} />
+          <HiOutlineSearch onClick={openSearch} className="search" />
           {mobileMenu ? (
-            <VscChromeClose onClick={() => setMobileMenu(false)} />
+            <VscChromeClose onClick={() => setMobileMenu(false)} className="close" />
           ) : (
-            <SlMenu onClick={openMobileMenu} />
+            <SlMenu onClick={openMobileMenu} className="hamburger" />
           )}
         </div>
       </ContentWrapper>

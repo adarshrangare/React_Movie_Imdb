@@ -5,6 +5,8 @@ import useFetch from "../../../hooks/useFetch";
 import { useSelector } from "react-redux";
 import "./style.css";
 import { ContentWrapper, Img } from "../../../components";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const HeroSection = () => {
   const [background, setBackgound] = useState("");
@@ -22,8 +24,23 @@ const HeroSection = () => {
   }, [data]);
 
   const searchQueryHandler = (e) => {
-    if (e.key === "Enter" && searchQuery.length > 0) {
-      navigate(`/search/${searchQuery}`);
+    if (e.key === "Enter") {
+
+      if(searchQuery.trim().length > 0){
+        navigate(`/search/${searchQuery}`)
+      } else{
+        toast.error('Please Enter a Movie or TV Show!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",});
+      }
+
+
     }
   };
 
@@ -54,8 +71,35 @@ const HeroSection = () => {
               value={searchQuery}
               
             />
-            <button>Search</button>
+            <button onClick={()=>{
+              if(searchQuery.trim().length > 0){
+                navigate(`/search/${searchQuery}`)
+              } else{
+                toast.error('Please Enter a Movie or TV Show!', {
+                  position: "bottom-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",});
+              }
+            }}>Search</button>
+           
           </div>
+          <ToastContainer
+              position="bottom-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
         </div>
       </ContentWrapper>
     </div>
