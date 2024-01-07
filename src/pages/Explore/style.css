@@ -127,3 +127,13 @@
   .explorePage .content .movieCard .posterBlock {
     margin-bottom: 30px;
   }
+
+
+  .react-select__menu-list{
+    background-color: #191919;
+    color: #fff;
+  }
+  
+  .react-select__menu-list option{
+    background-color: rgb(117, 46, 46);
+  }

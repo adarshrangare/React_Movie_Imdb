@@ -19,7 +19,7 @@ const SwitchTab = ({ onTabChange, data }) => {
         {data.map((tab, index) => (
           <span
             key={index}
-            className={`tabItem `}
+            className={`tabItem ${ selectedTabIndex==index ? "active" : ""} `}
             onClick={() => {
               activeTab(tab, index);
             }}

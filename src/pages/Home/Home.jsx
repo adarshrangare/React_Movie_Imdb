@@ -7,6 +7,7 @@ import Popular from "./Popular/Popular";
 import TopRated from "./TopRated/TopRated";
 import NowPlaying from "./NowPlaying/NowPlaying";
 import Upcoming from "./Upcoming/Upcoming";
+import Accordian from "./FAQ/Accordian";
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
         <Upcoming/>
         <Popular/>
         <TopRated/>
-
+        <Accordian/>
     </div>
   )
 }

@@ -118,6 +118,7 @@ const Explore = () => {
                             placeholder="Select genres"
                             className="react-select-container genresDD"
                             classNamePrefix="react-select"
+                            id="genreBy"
                         />
                         <Select
                             name="sortby"
