@@ -73,3 +73,10 @@
     height: auto;
   } */
   
+  .accordion_item .button{
+    display: grid;
+    grid-template-columns: 95% 5%;
+  }
+  .accordion_item .button span{
+    padding-left: 10px;
+  }
