@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const HeroSection = () => {
   const [background, setBackgound] = useState("https://image.tmdb.org/t/p/original/jE5o7y9K6pZtWNNMEw3IdpHuncR.jpg");
   const [searchQuery, setSearchQuery] = useState("");
-  const { data, loading } = useFetch("/movie/upcoming");
+  const { data, loading } = useFetch("/movie/top_rated");
   const navigate = useNavigate();
   const { url } = useSelector((state) => state.home);
   // console.log(url);
