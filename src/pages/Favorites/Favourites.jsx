@@ -9,7 +9,7 @@ const Favourites = () => {
         <span className="bigText">Coming Soon</span>
         <br />
         <br />  
-        <span className="smallText">Thank You for Patient.</span>
+        <span className="smallText">⚒️🚧Page Under Construction...🚧⚒️</span>
       </ContentWrapper>
     </div>
   )

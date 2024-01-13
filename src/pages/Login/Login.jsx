@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 import "./style.css";
-import { ContentWrapper } from '../../components';
+import { ContentWrapper } from "../../components";
 const Login = () => {
   return (
     <div className="pageNotFound">
       <ContentWrapper>
         <span className="bigText">Coming Soon</span>
         <br />
-        <br />  
-        <span className="smallText">Thank You for Patient.</span>
+        <br />
+        <span className="smallText">⚒️🚧Page Under Construction...🚧⚒️</span>
       </ContentWrapper>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
