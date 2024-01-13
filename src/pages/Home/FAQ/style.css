@@ -67,6 +67,7 @@
   .answer_wrapper {
     height: 0;
     overflow: hidden;
+    padding-right: 10%;
     transition: height ease 0.2s;
   }
   /* .answer_wrapper.open {

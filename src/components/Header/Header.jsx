@@ -67,6 +67,8 @@ const Header = () => {
       navigate("/explore/tv");
     } else if (type == "login") {
       navigate("/login");
+    } else if(type == "favourites"){
+      navigate("/favourites")
     }
     setMobileMenu(false);
   };
@@ -120,19 +122,24 @@ const Header = () => {
           <li className="menuItem">
             <FaHeart
               onClick={() => {
-                navigationHandler("favourite");
+                navigationHandler("favourites");
               }}
             />
             {mobileMenu && "Favourites"}
           </li>
+          
+
           <li className="menuItem">
           <FaUser
               onClick={() => {
                 navigationHandler("login");
               }}
             />
-            {mobileMenu && "User"}
+          
           </li>
+
+          
+          
          
         </ul>
         <div className="mobileMenuItems">
@@ -142,6 +149,11 @@ const Header = () => {
           ) : (
             <SlMenu onClick={openMobileMenu} className="hamburger" />
           )}
+          <FaUser
+              onClick={() => {
+                navigationHandler("login");
+              }}
+            />
         </div>
       </ContentWrapper>
       {showSearch && (

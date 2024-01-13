@@ -15,6 +15,7 @@ import {
   Details,
   Login,
   SignUp,
+  Favourites
 } from "./pages";
 
 const App = () => {
@@ -72,6 +73,7 @@ const App = () => {
         <Route path="/search/:query" element={<SearchResult />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/favourites" element={<Favourites />} />
         <Route path="/Sign-up" element={<SignUp />} />
         <Route path="*" element={<ErrorNotFound />} />
       </Routes>

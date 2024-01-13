@@ -38,7 +38,7 @@ const HeroSection = () => {
         navigate(`/search/${searchQuery}`)
       } else{
         toast.error('Please Enter a Movie or TV Show!', {
-          position: "bottom-right",
+          position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -64,9 +64,9 @@ const HeroSection = () => {
 
       <ContentWrapper>
         <div className="heroBannerContent">
-          <span className="title">Welcome.</span>
+          <span className="title">Blackhole</span>
           <span className="subTitle">
-            Unlimited Movies and TV and Web Series to Discover and Review.
+            of Unlimited Movies and TV and Web Series to Discover and Review.
             Explore Now.
           </span>
           <div className="searchInput">
@@ -84,7 +84,7 @@ const HeroSection = () => {
                 navigate(`/search/${searchQuery}`)
               } else{
                 toast.error('Please Enter a Movie or TV Show!', {
-                  position: "bottom-right",
+                  position: "top-right",
                   autoClose: 5000,
                   hideProgressBar: false,
                   closeOnClick: true,
@@ -97,7 +97,7 @@ const HeroSection = () => {
            
           </div>
           <ToastContainer
-              position="bottom-right"
+              position="top-right"
               autoClose={5000}
               hideProgressBar={false}
               newestOnTop={false}

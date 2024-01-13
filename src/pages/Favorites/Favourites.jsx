@@ -1,7 +1,8 @@
 import React from 'react'
-import "./style.css";
-import { ContentWrapper } from '../../components';
-const Login = () => {
+import { ContentWrapper } from '../../components'
+import './style.css'
+
+const Favourites = () => {
   return (
     <div className="pageNotFound">
       <ContentWrapper>
@@ -14,4 +15,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Favourites

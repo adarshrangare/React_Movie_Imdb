@@ -5,7 +5,9 @@ import ErrorNotFound from './Error404Page/ErrorNotFound';
 import Details from './Details/Details';
 import SignUp from './SignUp/SignUp';
 import Login from './Login/Login';
+import Favourites from './Favorites/Favourites';
 
 
 
-export {SearchResult, Home, Explore, ErrorNotFound, Details, Login, SignUp}
+
+export {SearchResult, Home, Explore, ErrorNotFound, Details, Login, SignUp,Favourites}

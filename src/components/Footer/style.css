@@ -62,6 +62,7 @@
     border-radius: 50%;
     background-color: var(--black);
     display: flex;
+    font-size: 1.2rem;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -70,4 +71,30 @@
   .footer .socialIcons .icon:hover {
     box-shadow: 0 0 0.625em var(--pink);
     color: var(--pink);
+  }
+
+  .footer .socialIcons .facebook:hover{
+    box-shadow: 0 0 0.625em #316FF6;
+    color: #316FF6; 
+  }
+  .footer .socialIcons .instagram:hover{
+    box-shadow: 0 0 0.625em #DD2A7B;
+    color: #DD2A7B; 
+  }
+  .footer .socialIcons .github:hover{
+    box-shadow: 0 0 0.625em #6e5494;
+    color: #7628ec; 
+  }
+  .footer .socialIcons .linkedin:hover{
+    box-shadow: 0 0 0.625em #0077b5 ;
+    color: #0077b5 ; 
+  }
+
+  .footer .copyright {
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.5;
+    text-align: center;
+    max-width: 800px;
+    margin-top: 20px;
   }
