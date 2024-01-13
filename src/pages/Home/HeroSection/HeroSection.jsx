@@ -9,19 +9,27 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const HeroSection = () => {
-  const [background, setBackgound] = useState("");
+  const [background, setBackgound] = useState("https://image.tmdb.org/t/p/original/jE5o7y9K6pZtWNNMEw3IdpHuncR.jpg");
   const [searchQuery, setSearchQuery] = useState("");
   const { data, loading } = useFetch("/movie/upcoming");
   const navigate = useNavigate();
   const { url } = useSelector((state) => state.home);
-  console.log(url);
+  // console.log(url);
 
   useEffect(() => {
-    let randomIndex = Math.round(Math.random() * 19);
+    let randomIndex = Math.round(Math.random() * 18);
     const bg = data?.results[randomIndex]?.backdrop_path;
+    console.log("useEffect with data dep",bg);
+    
 
     setBackgound(`${url?.backdrop}${bg}`);
   }, [data]);
+
+  
+
+
+
+ 
 
   const searchQueryHandler = (e) => {
     if (e.key === "Enter") {

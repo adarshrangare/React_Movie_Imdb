@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
 
 import { ContentWrapper } from "../";
-import logo from "../../assets/movix-logo.svg";
+import logo from "../../assets/blackhole-movie.svg";
 
 const Header = () => {
   const [show, setShow] = useState("top");
