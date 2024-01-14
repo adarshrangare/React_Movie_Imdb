@@ -2,8 +2,9 @@
 
 ## Blackhole of Unlimited Movies and TV and Web Series Database to Discover and Review without any Ad.
 
-    Explore the universe of cinema with Blackhole Movie DB, your ultimate destination for movie information. Discover a vast collection of films,
-    from timeless classics to the latest releases. Immerse yourself in the magic of storytelling and cinematography.
+    Explore the universe of cinema with Blackhole Movie DB, your ultimate destination for movie information. 
+    Discover a vast collection of films, from timeless classics to the latest releases. 
+    Immerse yourself in the magic of storytelling and cinematography.
 
 <br>
 
